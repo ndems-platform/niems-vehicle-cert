@@ -1,0 +1,338 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'TH SarabunPSK';
+    src: local('TH SarabunPSK'), local('THSarabunPSK'), local('Sarabun');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'TH SarabunPSK';
+    src: local('TH SarabunPSK Bold'), local('THSarabunPSK-Bold'), local('Sarabun Bold');
+    font-weight: bold;
+}
+
+.certificate-page {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto 20px auto;
+    background: white;
+    font-family: 'TH SarabunPSK', 'Sarabun', sans-serif;
+    font-size: 16pt;
+    line-height: 1.4;
+    color: #000;
+    padding: 10mm 20mm 15mm 20mm;
+    page-break-inside: avoid;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Header - Centered */
+.cert-header {
+    text-align: center;
+    margin-bottom: 0.3cm;
+}
+
+/* Logo - Centered at top */
+.cert-logo {
+    text-align: center;
+    margin-bottom: 0.2cm;
+}
+
+.cert-logo img {
+    width: 2.5cm;
+    height: 2.5cm;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+}
+
+.cert-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12cm;
+    height: 12cm;
+    z-index: 1;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.cert-watermark img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cert-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0 0 0.1cm 0;
+    line-height: 1.1;
+    position: relative;
+    z-index: 2;
+}
+
+.cert-subtitle {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Document Info - doc number left, date right on separate lines */
+.cert-doc-info {
+    margin-top: 0.5cm;
+    margin-bottom: 0.3cm;
+}
+
+.doc-number-left {
+    font-size: 14pt;
+    margin-bottom: 0.2cm;
+}
+
+.doc-number-tab {
+    margin-left: 1.5em;
+}
+
+.doc-date-right {
+    font-size: 14pt;
+    text-align: right;
+    padding-right: 1cm;
+}
+
+/* Statement */
+.cert-statement {
+    font-size: 14pt;
+    margin: 0.3cm 0 0.4cm 0;
+}
+
+/* Fields - Natural layout (government document style) */
+.cert-fields {
+    font-size: 14pt;
+    margin-bottom: 0.5cm;
+}
+
+.field-row {
+    margin-bottom: 0.25cm;
+    display: flex;
+    align-items: baseline;
+}
+
+.field-row-two-col {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.field-col-left {
+    width: 50%;
+    display: flex;
+}
+
+.field-col-right {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1cm;
+}
+
+.field-label {
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-right: 0.3em;
+}
+
+.field-value {
+    margin-left: 0;
+}
+
+/* Dates - Indented left */
+.cert-dates {
+    text-align: left;
+    font-size: 14pt;
+    margin: 0.5cm 0 0.5cm 4cm;
+}
+
+.cert-dates div {
+    margin-bottom: 0.15cm;
+}
+
+/* Signature - Centered */
+.cert-signature {
+    text-align: center;
+    font-size: 14pt;
+    margin-bottom: 0.5cm;
+    position: relative;
+    z-index: 2;
+}
+
+.sig-space {
+    height: 1.2cm;
+}
+
+.sig-name {
+    font-weight: normal;
+    margin-bottom: 0.15cm;
+}
+
+.sig-title {
+    font-size: 14pt;
+}
+
+/* Footer Notes - Fixed Position Above Doc Code */
+.cert-footer {
+    position: absolute;
+    bottom: 22mm;
+    left: 20mm;
+    right: 20mm;
+    font-size: 0.583rem;
+    letter-spacing: 0.02em;
+    z-index: 2;
+}
+
+.footer-title {
+    font-weight: bold;
+    display: inline;
+    font-size: 0.583rem;
+}
+
+.footer-notes {
+    display: inline;
+    font-size: 0.583rem;
+}
+
+.footer-notes p {
+    margin: 0 0 0.1cm 0.3cm;
+    line-height: 1.35;
+    text-indent: -0.2cm;
+    padding-left: 0.2cm;
+}
+
+.footer-notes p:first-child {
+    margin-top: 0.2cm;
+}
+
+/* Document Code Footer - Bottom Left */
+.cert-doc-code {
+    position: absolute;
+    bottom: 10mm;
+    left: 20mm;
+    font-size: 0.8rem;
+    color: #000;
+}
+
+/* Print */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 0;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .certificate-page {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 2.5cm;
+        box-shadow: none;
+        page-break-after: always;
+    }
+
+    .certificate-page:last-child {
+        page-break-after: auto;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+/* Toolbar */
+.preview-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #1e293b;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.preview-toolbar button {
+    padding: 0.75rem 1.5rem;
+    font-size: 16px;
+    font-family: 'Sarabun', sans-serif;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.btn-print {
+    background: #10b981;
+    color: white;
+}
+
+.btn-print:hover {
+    background: #059669;
+}
+
+.btn-close {
+    background: #64748b;
+    color: white;
+}
+
+.btn-close:hover {
+    background: #475569;
+}
+
+.preview-container {
+    padding-top: 80px;
+    background: #f1f5f9;
+    min-height: 100vh;
+}
+
+.certificates-wrapper {
+    padding: 2rem 0;
+}
+
+.certificate-page+.certificate-page {
+    margin-top: 2rem;
+}
+
+@media print {
+
+    .preview-toolbar,
+    .preview-container {
+        padding: 0;
+        background: none;
+    }
+
+    .certificates-wrapper {
+        padding: 0;
+    }
+
+    .certificate-page+.certificate-page {
+        margin-top: 0;
+    }
+}
